@@ -9,55 +9,52 @@
 	<div class="row">
 		<div class="col-xs-12">
 			<p>Fire Formatter by Zaim Ramlan</p>
+			<p>Temporarily change your Firebase Rules to <b>Read: True</b> and <b>Write: True</b></p>
 
-			<div class="form-group">
-				<label>Firebase Database Link</label>
-				<input type="text" name="firebase_database_link" class="form-control">
-			</div>
+			<div class="fireformatter-form">
+				<div class="form-group">
+					<label>Firebase Database Link</label>
+					<input type="text" name="firebase_database_link" class="form-control">
+				</div>
 
-			<div class="form-group">
-				<label>Parent Object</label>
-				<input type="text" name="parent_object" class="form-control">
-			</div>
+				<div class="form-group">
+					<label>Parent Object</label>
+					<input type="text" name="parent_object" class="form-control">
+				</div>
 
-			<div class="object-attributes">
-				<div class="attribute">
-					<label>Object Attribute</label>
-					<div class="panel panel-default">
-						<div class="panel-body">
-							<div class="form-group">
-								<label>Attribute Name</label>
-								<br><small>Name of the object's attribute</small>
-								<input type="text" name="attribute_name" class="form-control">
-							</div>	
-							<div class="form-group">
-								<label>Formatter Function</label>
-								<br><small>Function to format the data</small>
-								<textarea name="attribute_function" class="form-control" rows="3"></textarea>
-							</div>							
-							<button class="btn btn-danger btn-remove-attribute" onclick="$(this).parentsUntil('.object-attributes').remove();">Remove</button>
+				<div class="object-attributes">
+					<div class="attribute">
+						<label>Object Attribute</label>
+						<div class="panel panel-default">
+							<div class="panel-body">
+								<div class="form-group">
+									<label>Attribute Name</label>
+									<br><small>Name of the object's attribute</small>
+									<input type="text" name="attribute_name" class="form-control">
+								</div>	
+								<div class="form-group">
+									<label>Formatter Function</label>
+									<br><small>Each function comes with <b>var value = snapshot.val()</b></small>
+									<br><small>So, you can write the function body below to do cool stuff with the <b>snapshot.val()</b> that comes from Firebase.</small>
+									<textarea name="attribute_function" class="form-control" rows="3" placeholder="value = value.doSomethingWithMe();"></textarea>
+								</div>							
+								<button class="btn btn-danger btn-remove-attribute" onclick="$(this).parentsUntil('.object-attributes').remove();">Remove</button>
+							</div>
 						</div>
-					</div>
-				</div>			
-			</div>
+					</div>			
+				</div>
 
-			<div class="form-group">
-				<button class="btn btn-default btn-add-attribute">Add Attribute</button>
-				<button class="btn btn-success btn-reformat-db">Reformat Database</button>
-			</div>			
+				<div class="form-group">
+					<button class="btn btn-default btn-add-attribute">Add Attribute</button>
+					<button class="btn btn-success btn-reformat-db">Reformat Database</button>
+				</div>							
+			</div>
 		</div>
 	</div>	
 </div>
 
-<script src="https://www.gstatic.com/firebasejs/3.6.1/firebase.js"></script>
-<script>
-  // Initialize Firebase
-  var config = {
-    databaseURL: "https://experiment-lab-be278.firebaseio.com",
-  };
-  firebase.initializeApp(config);
-</script>
 <script src="assets/vendor/jquery/jquery-3.1.1.min.js"></script>
+<script src="https://www.gstatic.com/firebasejs/3.6.1/firebase.js"></script>
 <script src="assets/custom/firebaseformatter.js"></script>
 <script src="assets/custom/script.js"></script>
 </body>

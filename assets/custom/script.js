@@ -1,8 +1,12 @@
-$(document).ready(function() {
-	var formatter = new FirebaseFormatter();
-	formatter.formatData();
+// intialise fireformatter
+var fireformatter = new FirebaseFormatter();
 
+$(document).ready(function() {
 	$('.btn-add-attribute').click(function() {
-		formatter.addNewAttribute();
+		fireformatter.addNewAttribute();
+	});
+
+	$('.btn-reformat-db').click(function() {
+		fireformatter.reformatDatabase('fireformatter-form');
 	});
 });
