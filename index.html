@@ -14,12 +14,12 @@
 			<div class="fireformatter-form">
 				<div class="form-group">
 					<label>Firebase Database Link</label>
-					<input type="text" name="firebase_database_link" class="form-control">
+					<input type="text" name="firebase_database_link" class="form-control" placeholder="https://my-firebase-app.firebaseio.com">
 				</div>
 
 				<div class="form-group">
-					<label>Parent Object</label>
-					<input type="text" name="parent_object" class="form-control">
+					<label>Object Group Name</label>
+					<input type="text" name="parent_object" class="form-control" placeholder="object group name">
 				</div>
 
 				<div class="object-attributes">
@@ -30,13 +30,13 @@
 								<div class="form-group">
 									<label>Attribute Name</label>
 									<br><small>Name of the object's attribute</small>
-									<input type="text" name="attribute_name" class="form-control">
+									<input type="text" name="attribute_name" class="form-control" placeholder="object name">
 								</div>	
 								<div class="form-group">
-									<label>Formatter Function</label>
+									<label>Function to Format Attribute</label>
 									<br><small>Each function comes with <b>var value = snapshot.val()</b></small>
 									<br><small>So, you can write the function body below to do cool stuff with the <b>snapshot.val()</b> that comes from Firebase.</small>
-									<textarea name="attribute_function" class="form-control" rows="3" placeholder="value = value.doSomethingWithMe();"></textarea>
+									<textarea name="attribute_function" class="form-control" rows="3" placeholder="value = value.doSomething();"></textarea>
 								</div>							
 								<button class="btn btn-danger btn-remove-attribute" onclick="$(this).parentsUntil('.object-attributes').remove();">Remove</button>
 							</div>
